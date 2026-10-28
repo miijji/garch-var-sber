@@ -7,7 +7,7 @@ Distribution:      Standardized Student's t   AIC:                           803
 Method:                  Maximum Likelihood   BIC:                           8063.98
                                               No. Observations:                 2076
 Date:                      Wed, Oct 28 2026   Df Residuals:                     2075
-Time:                              22:23:09   Df Model:                            1
+Time:                              22:57:46   Df Model:                            1
                                 Mean Model                                
 ==========================================================================
                  coef    std err          t      P>|t|    95.0% Conf. Int.

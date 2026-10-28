@@ -32,15 +32,10 @@ for model, group in pred.groupby('model'):
         assert row.exceptions == k
     assert (group.q_99_pct < group.q_95_pct).all()
 assert len(summary) == 6
-for file in ['REPORT.md', 'backtest_summary.csv', 'backtest_GARCH-normal.png', 'backtest_GARCH-t.png', 'correlations.png',
+for file in ['backtest_summary.csv', 'backtest_GARCH-normal.png', 'backtest_GARCH-t.png', 'correlations.png',
              'stationarity.csv', 'residual_diagnostics_normal.csv', 'residual_diagnostics_t.csv',
              'initial_fit_normal.txt', 'initial_fit_t.txt', 'next_observation_forecast.csv']:
     shutil.copyfile(out / file, root / 'outputs' / file)
-(root / 'outputs/RESULTS.md').write_text(
-    '# Последний проверенный результат\n\n'
-    f'Идентификатор полного запуска: `{out.name}`. Подробные промежуточные файлы хранятся локально в `outputs/runs/` и не включены в репозиторий.\n\n'
-    '[Ноутбук](garch_var_research.ipynb), [выводы](REPORT.md), [таблица бэктестинга](backtest_summary.csv).\n\n'
-    'Проверены: выполнение всех ячеек без ошибок, даты и число прогнозов, соответствие фактических доходностей, знаки VaR, порядок квантилей и ES, количество нарушений.\n', encoding='utf-8')
 print(summary[['model', 'confidence', 'n', 'exceptions', 'expected', 'kupiec_p', 'independence_p']].to_string(index=False))
 print('Verified:', out)
 print('Executed code cells:', len(code))

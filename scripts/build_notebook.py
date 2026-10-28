@@ -35,7 +35,7 @@ import platform
 import importlib.metadata
 from datetime import datetime, timezone
 
-ROOT = next(p for p in [Path.cwd(), *Path.cwd().parents] if (p / 'AGENTS.md').exists() and (p / 'src/garch_var').is_dir())
+ROOT = next(p for p in [Path.cwd(), *Path.cwd().parents] if (p / 'pyproject.toml').exists() and (p / 'src/garch_var').is_dir())
 sys.path.insert(0, str(ROOT / 'src'))
 import numpy as np
 import pandas as pd
