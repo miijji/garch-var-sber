@@ -1,0 +1,14 @@
+.venv/
+.conda/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+work/
+.env
+kaggle.json
+data/raw/*.csv
+data/raw/*.json
+data/processed/*.csv
+outputs/runs/

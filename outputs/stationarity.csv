@@ -1,0 +1,6 @@
+test,null_hypothesis,statistic,p_value,lags,note
+ADF,Единичный корень (нестационарность),-16.19797521651598,4.1054129993861976e-29,8,
+KPSS,Стационарность вокруг константы,0.11844033459574632,0.1,10,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+ARCH-LM,Нет ARCH-эффекта до лага 10,109.09998157888296,8.102685674625394e-19,10,

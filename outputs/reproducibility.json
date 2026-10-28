@@ -1,0 +1,75 @@
+{
+  "settings": {
+    "ticker": "SBER",
+    "start": "2016-01-01",
+    "end": "2025-12-31",
+    "test_size": 500,
+    "levels": [
+      0.95,
+      0.99
+    ],
+    "distributions": [
+      "normal",
+      "t"
+    ],
+    "window": "expanding",
+    "refit": "every observation",
+    "train_end": "2024-04-17",
+    "return_unit": "percentage points",
+    "source": "MOEX"
+  },
+  "data": {
+    "source": "MOEX ISS",
+    "url": "https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities/SBER/candles.json",
+    "requests": [
+      "https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities/SBER/candles.json?from=2016-01-01&till=2025-12-31&interval=24&start=0&iss.meta=off",
+      "https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities/SBER/candles.json?from=2016-01-01&till=2025-12-31&interval=24&start=500&iss.meta=off",
+      "https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities/SBER/candles.json?from=2016-01-01&till=2025-12-31&interval=24&start=1000&iss.meta=off",
+      "https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities/SBER/candles.json?from=2016-01-01&till=2025-12-31&interval=24&start=1500&iss.meta=off",
+      "https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities/SBER/candles.json?from=2016-01-01&till=2025-12-31&interval=24&start=2000&iss.meta=off",
+      "https://iss.moex.com/iss/engines/stock/markets/shares/boards/TQBR/securities/SBER/candles.json?from=2016-01-01&till=2025-12-31&interval=24&start=2500&iss.meta=off"
+    ],
+    "ticker": "SBER",
+    "board": "TQBR",
+    "retrieved_utc": "2026-10-28T19:18:48.434894+00:00",
+    "requested_start": "2016-01-01",
+    "requested_end": "2025-12-31",
+    "price_field": "close",
+    "date_field": "begin",
+    "interval": 24,
+    "currency": "RUB",
+    "adjustment": "Не скорректировано на дивиденды и корпоративные события.",
+    "transformation": "begin -> дата без времени; close без изменений; сортировка по дате.",
+    "sha256": "be3bbfbe4c370c637a9d8a573ceebd24b6bc53996922a5e5b68240b16764a032",
+    "provider_sha256": "8c0c4a25cd94d9f6f01f049cfa79f1a160275638e73e68eb7ac4a18db66b9837",
+    "usage": "Проверить условия MOEX перед распространением котировок; снимки исключены из Git.",
+    "quality": {
+      "observations": 2577,
+      "start": "2016-01-04",
+      "end": "2025-12-30",
+      "missing_close": 0,
+      "duplicates": 0,
+      "gaps_over_7_calendar_days": [
+        {
+          "date": "2022-03-24",
+          "gap_days": 27
+        }
+      ],
+      "absolute_log_returns_over_15_pct": {
+        "2018-04-09": -18.68496307341516,
+        "2022-02-21": -21.92753830710874,
+        "2022-02-24": -45.591828573819804
+      },
+      "policy": "Не заполняем неторговые дни; не удаляем экстремальные доходности. Большие интервалы требуют интерпретации."
+    },
+    "python": "3.13.9",
+    "versions": {
+      "arch": "8.0.0",
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "statsmodels": "0.14.6",
+      "matplotlib": "3.11.2"
+    }
+  }
+}
